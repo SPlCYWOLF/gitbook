@@ -1,4 +1,4 @@
-# 🥺 going production with Next.js
+# 🚀 going production with Next.js
 
 [참고1](https://nextjs.org/docs/going-to-production)
 
