@@ -49,3 +49,9 @@ next.js 를 활용한 웹 어플리케이션을 상품화 하기위한 체크리
    * next.js 를 프로덕션 빌드 => incognito 모드에서 lighthouse 점수 확인 => 타 브라우저 익스텐션의 영향 안받음 => 더 정확한 진단
 
    \
+   
+4. <mark style="color:green;">퍼포먼스 향상</mark>
+
+   - next/image 활용하여 이미지 최적화
+   - 자동 폰트 최적화
+   - 스크립트 최적화
