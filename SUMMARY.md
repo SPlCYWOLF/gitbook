@@ -16,4 +16,4 @@
 * [SQL](<SQL/README.md>)
   * [programmers](<SQL/programmers/README.md>)
 * [git](<git/README.md>)
-  * 
+  * [🍡Merge using Git bash](<git/merge using gitbash.md>)
