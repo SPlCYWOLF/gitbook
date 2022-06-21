@@ -1,8 +1,6 @@
 # 🚀 going production with Next.js
 
-[참고1](https://nextjs.org/docs/going-to-production)
-
-next.js 를 활용한 웹 어플리케이션을 상품화 하기위한 체크리스트
+[출처1](https://nextjs.org/docs/going-to-production) : next.js 를 활용한 웹 어플리케이션을 상품화 하기위한 체크리스트
 
 ***
 
