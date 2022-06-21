@@ -2,7 +2,9 @@
 
 [출처1](https://nextjs.org/docs/going-to-production) : next.js 를 활용한 웹 어플리케이션을 상품화 하기위한 체크리스트
 
-***
+___
+
+
 
 1. <mark style="color:green;">SSR 캐싱 적극 활용</mark>
 

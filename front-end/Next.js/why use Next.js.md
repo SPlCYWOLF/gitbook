@@ -2,7 +2,9 @@
 
 [참고1](https://www.youtube.com/watch?v=rtgbaKBhdkk) [참고2](https://www.youtube.com/watch?v=6jWWKczzGM0) [참고3](https://www.youtube.com/watch?v=f1rF9YKm1Ms\&t=563s) [참고4](https://www.youtube.com/watch?v=JW2c-y-MdiA)
 
-***
+___
+
+
 
 1.  <mark style="color:green;">react 입문자에게 매우 적합.</mark>
 
