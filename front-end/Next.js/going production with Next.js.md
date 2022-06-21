@@ -18,7 +18,7 @@ next.js 를 활용한 웹 어플리케이션을 상품화 하기위한 체크리
 
    * `stale-while-revalidate` 를 활용하면, `getServerSideProps()` 함수로 SSR 캐싱 커스터마이즈 가능.
 
-     ```react
+     ```jsx
      export async function getServerSideProps({ req, res }) {
        res.setHeader(
          'Cache-Control',
