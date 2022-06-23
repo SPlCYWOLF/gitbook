@@ -5,6 +5,7 @@
   * [Next.js](<front-end/next.js/README.md>)
     * [🥺 why use Next.js?](<front-end/Next.js/why use Next.js.md>)
     * [💰 going production with Next.js](<front-end/Next.js/going production with Next.js.md>)
+    * [😼SSG vs CSR vs SSR](front-end/Next.js/SSG vs CSR vs SSR.md)
   * [Javascript](<front-end/Javascript/README.md>)
     * [🍃Callback](<front-end/Javascript/callback.md>)
   * [React](<front-end/React/README.md>)
