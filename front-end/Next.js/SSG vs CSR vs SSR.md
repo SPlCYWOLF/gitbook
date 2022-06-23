@@ -8,7 +8,7 @@ ___
 
 1. CSR와 SSR의 부분적인 장점들과 DX(developer experience) 를 등가교환 == SSG.
 
-   ![image-20220623192431887](SSG vs CSR vs SSR.assets/image-20220623192431887.png)
+   ![image-20220623192431887](https://github.com/SPlCYWOLF/gitbook/blob/main/front-end/Next.js/SSG%20vs%20CSR%20vs%20SSR.assets/image-20220623192431887.png?raw=true)
 
    <br>
 
