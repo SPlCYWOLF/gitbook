@@ -18,7 +18,7 @@
     * [dp](algorithm/baekjoon/dp/README.md)
       * [🌀백준 10870번 - 피보나치수5](<algorithm/baekjoon/dp/10870_피보나치수5.md>)
     * [brute force](<algorithm/baekjoon/brute force/README.md>)
-      * [🤔백준 2798번 - Jack](<algorithm/baekjoon/brute force/2798_jack.md)
+      * [🤔백준 2798번 - Jack](<algorithm/baekjoon/brute force/2798_jack.md>)
   * [programmers](<algorithm/programmers/README.md>)
 * [SQL](<SQL/README.md>)
   * [programmers](<SQL/programmers/README.md>)
