@@ -14,6 +14,7 @@
     * [implementation](<algorithm/baekjoon/implementation/README.md>)
       * [🌮백준 1316번 - 그룹단어 체커](<algorithm/baekjoon/implementation/1316_그룹단어체커.md>)
       * [🕵백준 1978번 - 소수찾기](<algorithm/baekjoon/implementation/1978_소수찾기.md>)
+      * [💎백준 7568번 - 덩치](<algorithm/baekjoon/implementation/7568_덩치.md>)
     * [dp](algorithm/baekjoon/dp/README.md)
       * [🌀백준 10870번 - 피보나치수5](<algorithm/baekjoon/dp/10870_피보나치수5.md>)
     * [brute force](<algorithm/baekjoon/brute force/README.md>)
