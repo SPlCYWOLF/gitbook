@@ -8,6 +8,7 @@
     * [😼SSG vs CSR vs SSR](<front-end/Next.js/SSG vs CSR vs SSR.md>)
   * [Javascript](front-end/Javascript/README.md)
     * [🍃Callback](front-end/Javascript/callback.md)
+    * [👓 Closure](<front-end/Javascript/closure.md>)
   * [React](front-end/React/README.md)
 * [algorithm](algorithm/README.md)
   * [baekjoon](algorithm/baekjoon/README.md)
