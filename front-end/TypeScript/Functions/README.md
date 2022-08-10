@@ -1,0 +1,1 @@
+# TypeScript Functions study notes
