@@ -19,6 +19,7 @@
     * [Functions](front-end/TypeScript/Functions/README.md)
       * [🏠 Call Signatures](front-end/TypeScript/Functions/CallSignatures.md)
       * [💣 Overloading](front-end/TypeScript/Functions/Overloading.md)
+      * [🐰 Polymorphism](front-end/TypeScript/Functions/Polymorphism.md)
   * [React](front-end/React/README.md)
 * [algorithm](algorithm/README.md)
   * [baekjoon](algorithm/baekjoon/README.md)
