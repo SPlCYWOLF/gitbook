@@ -28,11 +28,13 @@
 
 2. ## using the Call Signature
 
-   - can simplify the code by declaring the types of a function prior to implementing the function
+   - an explanation given to the TS, `how` a function will be called (what is the type of arguments, returns).
 
+   - can simplify the code by declaring the types of a function prior to implementing the function
+   
    - the Call Signature `doesn't tell how the function is implemented`,
      but `do tell the types of arguments and the return type of the function`.
-
+   
    - ```typescript
      // type of a call signature of a function
      type Add = (a:number, b:number) => number;

@@ -18,6 +18,7 @@
       * [🌼 Types in TypeScript part.3](front-end/TypeScript/TypeScriptBasics/TypesofTS3.md)
     * [Functions](front-end/TypeScript/Functions/README.md)
       * [🏠 Call Signatures](front-end/TypeScript/Functions/CallSignatures.md)
+      * [💣 Overloading](front-end/TypeScript/Functions/Overloading.md)
   * [React](front-end/React/README.md)
 * [algorithm](algorithm/README.md)
   * [baekjoon](algorithm/baekjoon/README.md)
