@@ -10,7 +10,10 @@
     * [🍃Callback](front-end/Javascript/callback.md)
     * [👓 Closure](<front-end/Javascript/closure.md>)
     * [Array](front-end/Javascript/Array/README.md)
-      * 
+      * [🌽 basics](front-end/Javascript/Array/basics.md)
+      * [🗼 ES3 methods](front-end/Javascript/Array/ES3methods.md)
+      * [🌛 ES5 methods](front-end/Javascript/Array/ES5methods.md)
+      * [🦃 ES6 methods](front-end/Javascript/Array/ES6methods.md)
   * [TypeScript](front-end/TypeScript/README.md)
     * [TypeScript Basics](front-end/TypeScript/TypeScriptBasics/README.md)
       * [😘 How TypeScript works](front-end/TypeScript/TypeScriptBasics/HowTypeScriptworks.md)
