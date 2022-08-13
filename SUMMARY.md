@@ -9,6 +9,8 @@
   * [JavaScript](front-end/Javascript/README.md)
     * [🍃Callback](front-end/Javascript/callback.md)
     * [👓 Closure](<front-end/Javascript/closure.md>)
+    * [Array](front-end/Javascript/Array/README.md)
+      * 
   * [TypeScript](front-end/TypeScript/README.md)
     * [TypeScript Basics](front-end/TypeScript/TypeScriptBasics/README.md)
       * [😘 How TypeScript works](front-end/TypeScript/TypeScriptBasics/HowTypeScriptworks.md)
