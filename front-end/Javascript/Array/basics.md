@@ -39,7 +39,7 @@ ___
 
    <br>
 
-4. ## How to create an Array
+4. ## Create
 
    - `literal` 활용 (추천)
 
@@ -61,16 +61,43 @@ ___
 
    <br>
 
-5. ## How to interact with an Array
+5. ## Interact
 
-   - `[]` 연산자를 활용
+   - 읽기
 
      ```javascript
+     // 배열의 `[]` 연산자는 객체 `property`접근 시 활용되는 `[]`와 동일하게 동작한다.
+     
      const a = [1, 2, 3]
      a[1]  // 2번째 원소의 값을 읽는다
      ```
 
-   - 배열의 `[]` 연산자는 객체 `property`접근 시 활용되는 `[]`와 동일하게 동작한다.
+   - 원소 추가하기 (`push`메서드 활용)
+
+     ```javascript
+     const a = []
+     a.push(1, 2, 3)
+     console.log(a)  // [1, 2, 3]
+     ```
+
+   - 원소 삭제하기 (`delete` 연산자 활용 (비추천))
+
+     ```javascript
+     const a = [1, 2, 3]
+     delete a[1]
+     console.log(a)  // [1,  , 3]   2가 undefined로 채워졌다.
+     a.length  // 고로 length도 3 그대로이다
+     ```
+
+     `pop, shift` 메서드 활용
+
+     ```javascript
+     const a = [1, 2, 3]
+     a.pop()  // returns 3
+     console.log(a)  // [1, 2]
+     a.shift()
+     console.log(a)  // [2]
+     ```
 
    <br>
 
