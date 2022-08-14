@@ -121,8 +121,9 @@
 
      ```javascript
      const a = [1, 2, 3, 4, 5]
+     const b = [1, 2, 3, 1, 0]
      a.indexOf(1)  // 0을 반환하고 a[0]은 1이다
-     a.lastIndexOf(1)  // 3을 반환하고 a[3]은 4이다
+     a.lastIndexOf(1)  // 3을 반환하고 a[3]은 1이다
      ```
 
      
