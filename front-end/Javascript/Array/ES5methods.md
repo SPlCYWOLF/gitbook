@@ -1,76 +1,128 @@
-# 🍃Callback
+# 🍟 ES5 methods
 
-[참조1](https://www.youtube.com/watch?v=s1vpVCrT8f4) : 비동기 처리의 시작 콜백 이해하기
+[ref 1](https://www.oreilly.com/library/view/javascript-the-definitive/9781449393854/) : chap.7 Arrays
 
-___
+---
 
-<br>
+1. ## forEach()
 
-1. callback 의 정의
+   - 배열의 각 요소에 대해 `callback`함수를 실행한다.
 
-   - "나중에 다시 불러(call)달라 전달하는 함수들" 을 콜백 함수라 한다.
-   - sync 와 async 콜백이 존재한다.
+   - **`return` 값은 없다**.
 
-   <br>
+   - 모든 원소가 순회되기 전에는 종료되지 않는다, 고로 `break`문을 사용할 수 없다.
+     하지만, `try`블록 안에서 `forEach`를 호출한다면, `foreach.break`예외를 발생시켜 종료가 가능하다.
 
-2. Sync & Async
-
-   - JS는 synchronous 하다. => hoisting 이후 코드가 나타나는 순서대로 동기적으로 실행
-
-   - Hoisting : 변수선언(var) 또는 함수선언이 우선적으로 "제일 위로" 올라가는 것.
-
-   - ```javascript
-     // 아래의 결과 : 1 => 2 => 3
-     console.log('1');
-     console.log('2');
-     console.log('3');
-     
-     // 아래의 결과 : 1 => 3 => (1초 후) 2
-     console.log('1');
-     setTimeout(() => console.log('2'), 1000);
-     console.log('3');
-     ```
-
-   - Sync vs Async callback 예시
+   - example
 
      ```javascript
-     // synchronous callback : 1 => 2
-     printImmediately(() => console.log('1'));
-     console.log('2');
-     function printImmediately(print);
-     
-     // asynchronous callback : 2 => 1
-     printWithDelay(() => console.log('1'), 1000);
-     console.log('2');
-     function printWithDelay(print, timeout) {
-         setTimeout(print, timeout);
-     };
+     const data = [1, 2, 3, 4, 5]
+     let sum = 0
+     data.forEach(d => sum += d)
+     console.log(sum)  // 15
      ```
 
    <br>
 
-3. callback 주의점!
+2. ## map()
 
-   - 가독성이 너무 떨어진다. 한 눈에 로직 파악이 너무 힘듦, 고로 디버깅 및 유지보수 시 힘들다.
+   - `forEach`와 동일한 형태로 호출되지만, `map`에선 인자로 전달된 함수는 반드시 `return`값이 있어야한다.
 
-   - callback 지옥 예시
+   - 기존 배열은 그대로 두고, `callback`함수의 반환값을 요소로 하는 **새로운 배열을 `return`**한다.
+
+   - example
 
      ```javascript
-     userStorage.loginUser(
-         id,
-         pw,
-         user => {
-             userWithRole => {
-                 alert('hello ${userWithRole.name}, you have a ${userWithRole.role} role');
-             },
-             error => {
-                 console.log(error);
-             },
-         },
-         error => {
-             console.log(error);
-         }
-     ); 
+     const a = [1, 2, 3, 4, 5]
+     const b = a.map(x => {
+         return x + 3
+     })
+     console.log(b)  // [4, 5, 6, 7, 8]
      ```
 
-   - 고로 조금 더 병렬적으로, 효율적으로 코딩 필요 => Promise 혹은 Async await 활용!
+   <br>
+
+3. ## filter()
+
+   - `forEach, map`과 동일한 형태로 호출된다.
+
+   - 콜백 함수의 `return`값이 참인 요소들만을 모아서 **새로운 배열을 반환**한다.
+     고로, 해당 매서드에 전달되는 함수는 조건자 함수(`predicate`) 여야한다.
+
+   - example
+
+     ```javascript
+     const a = [1, 2, 3, 4, 5]
+     const b = a.filter(e => {
+         return e > 2
+     })
+     console.log(b)  // [3, 4, 5]
+     ```
+
+   <br>
+
+4. ## every(), some()
+
+   - 각각, 
+     배열의 모든 요소가 `predicate`를 통과하면 참을 반환하고,
+     배열의 요소중 하나라도 `predicate`를 통과하면 참을 반환한다.
+
+   - 메서드의 `return`값이 결정되면 순회를 종료한다.
+
+   - example
+
+     ```javascript
+     const a = [1, 2, 3, 4, 5]
+     a.every(e => {
+         return e === 3
+     })  // false
+     a. some(e => {
+         return e === 3
+     })  // true
+     ```
+
+   <br>
+
+5. ## reduce(), reduceRight()
+
+   - 배열의 원소들을 하나의 값으로 결합한다.
+
+   - `callback`함수의 `return`값들을 하나의 값 `acc` 에 누적 후 반환
+
+   - 함수형 프로그래밍에서 토용ㅇ되는 `injdect`와 `fold`연산을 수행한다.
+
+   - 두 메서드의 차이는, 배열의 처음 부터냐 끝 부터냐의 차이다.
+
+   - example
+
+     ```javascript
+     const a = [1, 2, 3, 4, 5]
+     const sum = a.reduce((acc, n) => {
+         return acc + n
+     }, 0)  // 초기값 인자이다. 만약 없다면, 처음 들어오는 원소를 초기값으로 자동 할당한다.
+     console.log(sum)  // 15
+     
+     const sumRight = a.reduceRight((acc, n) => {
+         return Math.pow(n, acc)  // 거듭제곱 계산이 정렬된 배열에서 거꾸로 누적계산에 좋은 예시다
+     })
+     ```
+
+   <br>
+
+6. ## indexOf(), lastIndexOf()
+
+   - 배열 원소중에서 특정한 값을 찾는다.
+
+   - 값을 찾으면 해당 원소를, 아니면 `-1`을 `return`한다.
+
+   - 두 메서드의 차이는, 베열의 처음 부터냐 끝 부터냐의 차이다.
+
+   - example
+
+     ```javascript
+     const a = [1, 2, 3, 4, 5]
+     a.indexOf(1)  // 0을 반환하고 a[0]은 1이다
+     a.lastIndexOf(1)  // 3을 반환하고 a[3]은 4이다
+     ```
+
+     
