@@ -16,6 +16,7 @@
     * [Class & Module](front-end/Javascript/Class & Module/README.md)
       * [🌽 basics](front-end/Javascript/Class & Module/basics.md)
       * [🕋 Class & Prototype](front-end/Javascript/Class & Module/Class & Prototype.md)
+      * [🎺 Class & Constructor](front-end/Javascript/Class & Module/Class & Constructor.md)
   * [TypeScript](front-end/TypeScript/README.md)
     * [TypeScript Basics](front-end/TypeScript/TypeScriptBasics/README.md)
       * [😘 How TypeScript works](front-end/TypeScript/TypeScriptBasics/HowTypeScriptworks.md)
