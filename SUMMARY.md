@@ -7,7 +7,7 @@
     * [💰 going production with Next.js](<front-end/Next.js/going production with Next.js.md>)
     * [😼SSG vs CSR vs SSR](<front-end/Next.js/SSG vs CSR vs SSR.md>)
   * [JavaScript](front-end/Javascript/README.md)
-    * [🍃Callback](front-end/Javascript/callback.md)
+    * [🍃 Callback](front-end/Javascript/callback.md)
     * [👓 Closure](<front-end/Javascript/closure.md>)
     * [Array](front-end/Javascript/Array/README.md)
       * [🌽 basics](front-end/Javascript/Array/basics.md)
