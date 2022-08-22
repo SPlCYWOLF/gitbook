@@ -13,6 +13,8 @@
       * [🌽 basics](front-end/Javascript/Array/basics.md)
       * [🚘 ES3 methods](front-end/Javascript/Array/ES3methods.md)
       * [🍟 ES5 methods](front-end/Javascript/Array/ES5methods.md)
+    * [Class & Module](front-end/Javascript/Class & Module/README.md)
+      * [🌽 basics](front-end/Javascript/Class & Module/basics.md)
   * [TypeScript](front-end/TypeScript/README.md)
     * [TypeScript Basics](front-end/TypeScript/TypeScriptBasics/README.md)
       * [😘 How TypeScript works](front-end/TypeScript/TypeScriptBasics/HowTypeScriptworks.md)
