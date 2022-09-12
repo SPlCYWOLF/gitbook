@@ -4,6 +4,8 @@
 * [Computer-Science](CS/README.md)
   * [OS](CS/OS/README.md)
     * [🌵 OS introduction](CS/OS/OS\_introduction.md)
+  * [Network](CS/Network/README.md)
+    * [💙 Websocket vs WebRTC](CS/Network/Websocket_vs_WebRTC.md)
 * [front-end](front-end/README.md)
   * [Next.js](front-end/next.js/README.md)
     * [🥺 why use Next.js?](<front-end/Next.js/why use Next.js.md>)
