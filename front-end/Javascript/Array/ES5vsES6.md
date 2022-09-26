@@ -1,6 +1,6 @@
 # ✨ ES5 vs ES6
 
-[참조1](https://www.javatpoint.com/es5-vs-es6) : 
+[참조1](https://www.javatpoint.com/es5-vs-es6) ,   [참조2](https://hbsowo58.tistory.com/407) 
 
 -----
 
