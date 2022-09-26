@@ -19,6 +19,7 @@
       * [🌽 basics](front-end/Javascript/Array/basics.md)
       * [🗼 ES3 methods](front-end/Javascript/Array/ES3methods.md)
       * [🍟 ES5 methods](front-end/Javascript/Array/ES5methods.md)
+      * [✨ ES5 vs ES6](front-end/Javascript/Array/ES5vsES6.md)
     * [Class & Module](front-end/Javascript/Class\&Module/README.md)
       * [🌽 basics](front-end/Javascript/Class\&Module/basics.md)
       * [🕋 Class & Prototype](front-end/Javascript/Class\&Module/Class\&Prototype.md)
