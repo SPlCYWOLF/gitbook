@@ -1,6 +1,6 @@
 # 🐧 Token storage
 
-[ref 1](https://blog.bitsrc.io/sessionstorage-and-localstorage-a-ux-security-comparison-a05c486413e0) ,   [ref 2](https://www.youtube.com/watch?v=occfnVaZOXI) ,   [ref 3](https://auth0.com/docs/secure/security-guidance/data-security/token-storage)
+[ref 1](https://blog.bitsrc.io/sessionstorage-and-localstorage-a-ux-security-comparison-a05c486413e0) ,   [ref 2](https://www.youtube.com/watch?v=occfnVaZOXI) ,   [ref 3](https://auth0.com/docs/secure/security-guidance/data-security/token-storage) ,    [ref4](https://community.auth0.com/t/why-is-storing-tokens-in-memory-recommended/17742) ,   [ref5](https://blog.ropnop.com/storing-tokens-in-browser/#global-variable:~:text=or%20new%20page-,Closure%20Variable,-PoC%20Page%3A) ,   [ref6](https://dev-dain.tistory.com/m/46#:~:text=%EC%82%AC%EC%9D%B4%ED%8A%B8%20%EC%83%9D%EC%84%B1%EA%B8%B0%EC%99%80%20%EC%B0%B0%EB%96%A1%EA%B6%81%ED%95%A9%EC%9D%B4%EB%8B%A4.-,SPA%20%EA%B5%AC%ED%98%84%20%EB%B0%A9%EC%8B%9D%EB%93%A4,-SPA%20%EA%B5%AC%ED%98%84%20%EB%B0%A9%EC%8B%9D%EC%9D%80)
 
 ---
 
@@ -34,19 +34,93 @@
 
 <br>
 
-## 3. store in the Memory
+## 3. store in the Memory (JS closure variable)
 
-- `SPA` 기준, 상대적으로 가장 안전한 방법 (왜?)
+- 상대적으로 가장 안전한 방법
+
+  - why ? :
+    마찬가지로 `cross-site-scripting`위험에 노출되어있지만,
+    `JS`의 `closure`에 저장하게 됨 (`class`내부의 `private`변수에 저장하는 느낌).
+
+    토큰값을 변수에 저장하는 함수와, 저장된 토큰값을 헤더에 추가하는 함수만 보여줌.
+    고로, `JS`로 토큰값 자체에 접근하는건 매우 어렵고,
+    `auth.fetch`를 활용하려해도 `whitelist origin`을 지정해 놓을 수 있기 때문에 
+
 - 인지도 높은 OAuth 프레임워크인  `AuthO`에서 추천하는 토큰 저장 방식.
+
 - JS 변수에 토큰을 저장하는 방법.
-- 마찬가지로 `cross-site-scripting`위험에 노출되어있음.
+
 - 크롬의 경우, 탭 마다 고유의 메모리 공간을 가짐 == 새로운 탭 마다 새롭게 로그인 필요.
   - 이에 대한 해결책 :
-    1. `Refresh Token `  (but 어떻게? 추가 검색 필요)
+    1. `Refresh Token ` 
        - 새로운 `access token` 을 얻기위한 토큰
        - 하지만 해당 토큰의 lifetime 이 길면 위험
          - 해결책 : `refresh token rotation`
            1. 매번 `refresh token`으로 `access token` 이 발행될 때 마다 새로운 `refresh token` 생성..
+           1. 사용자 경험 위해서도 탭마다 이런게 있으면 불-편
+
+- 페이지 새로고침 되면 지워짐 === 새롭게 로그인 필요.
+
+  - 이에 대한 해결책 :
+    1. SPA로 웹 서비스 구현
+       - SPA === 페이지 새로고침 없이 데이터가 교환되고 업데이트되는 원리 === 토큰의 variable 값 보존 가능
+
+- 예시 : 
+
+  ```javascript
+  function authModule() {
+      // prevents overwriting the normal fetch operation to steal the authorization cookie
+      const fetch = window.fetch;
+      
+      const authOrigins = ["https://tokenstorage.ropnop.dev", "http://localhost:3000"]; // 화이트 리스트
+      let token = '';
+      
+      this.setToken = (value) => {  // 토큰값을 변수에 저장하는 함수
+          token = value
+      }
+  
+      this.fetch = (resource, options) => {  // 저장된 토큰값을 http 요청 헤더에 추가하는 함수
+          let req = new Request(resource, options);
+          destOrigin = new URL(req.url).origin;
+          if (token && authOrigins.includes(destOrigin)) {
+              req.headers.set('Authorization', token);
+          }
+          return fetch(req)
+      }
+  }
+  
+  
+  const auth = new authModule();
+  
+  function login() {  // 로그인 요청 함수
+      fetch("/api/login")
+          .then((res) => {
+              if (res.status == 200) {
+                  return res.json()
+              } else {
+                  throw Error(res.statusText)
+              }
+          })
+          .then(data => {
+              auth.setToken(data.token)  // 토큰값을 JS closure 변수에 저장
+              // logResponse("loginResponse", `Private auth object set with token value: ${data.token}`)
+          })
+          .catch(console.error)
+  }
+  
+  
+  function makeRequest() {
+      auth.fetch("/api/echo", {headers: {"CustomHeader1": "foobar"}})
+          .then((res) => {
+              if (res.status == 200) {
+                  return res.text()
+              } else {
+                  throw Error(res.statusText)
+              }
+          }).then(responseText => logResponse("requestResponse", responseText))
+          .catch(console.error)
+  }
+  ```
 
 <br>
 
