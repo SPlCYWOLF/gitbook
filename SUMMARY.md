@@ -43,6 +43,7 @@
   * [OAuth](front-end/OAuth/README.md)
     * [🐢 OAuth Basics](front-end/OAuth/oauth_basics.md)
     * [🐧 Token Storage](front-end/OAuth/token_storage.md)
+    * [🏌 CSRF & XSS](front-end/OAuth/csrf_xss.md)
 * [algorithm](algorithm/README.md)
   * [baekjoon](algorithm/baekjoon/README.md)
     * [implementation](algorithm/baekjoon/implementation/README.md)
